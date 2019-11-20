@@ -81,7 +81,7 @@ def get_ec2_costs(ec2_instances, region, total_test_time, access_key=None,
     ec2 = [i.description['Reservations'][0]['Instances'][0]['InstanceType']
            for i in ec2_instances]
     if not ec2:
-        th.info("No EC2 instances found! returning costs as $0.")
+        print("No EC2 instances found! returning costs as $0.")
         return 0
     # Calculating costs
     ec2_pricing = sum([get_pricing(region, resource=i,
@@ -106,7 +106,7 @@ def get_volume_costs(ec2_volumes, region, total_test_time, access_key=None,
     Returns: costs
     """
     if not ec2_volumes:
-        th.info("No volumes found! returning costs as 0.")
+        print("No volumes found! returning costs as 0.")
         return 0
     vol_costs = 0
     size_costs = 0
