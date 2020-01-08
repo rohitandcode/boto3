@@ -1,3 +1,5 @@
+# calculate aws costs for each cf stack deployment (stack can consist of ec2 instances, ebs vols, s3 buckets)
+
 import boto3
 import json
 from datetime import timedelta
